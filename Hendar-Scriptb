@@ -1,0 +1,3 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/aja388282-oss/Hendar/refs/heads/main/Hendar-Script"))()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/aja388282-oss/Hendar/refs/heads/main/Hendar"))()
