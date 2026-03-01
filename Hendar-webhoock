@@ -17,7 +17,7 @@ local function SendWebhook(userName, modelName)
 				description = "ESCAPE TSUNAMI FOR BRAINROT\n\nSCRIPT BY **HENDAR**",
 				color = 16753920, -- orange
 				footer = {
-					text = "THANKS YOU <:emoji_8:1457410958371590286>| WEBHOOCK ONLY DIVINE AND INFINITY WHEN SPAWN IN SERVER"
+					text = "THANKS YOU 😘| WEBHOOCK ONLY DIVINE AND INFINITY WHEN SPAWN IN SERVER"
 				}
 			}
 		}
