@@ -1,0 +1,76 @@
+--// SERVICES
+local Players = game:GetService("Players")
+local HttpService = game:GetService("HttpService")
+
+local player = Players.LocalPlayer
+
+--// WEBHOOK
+local WEBHOOK_URL = "https://discord.com/api/webhooks/1477439178672439297/86hcA3t2RhwpGUO_uaQ2_3pWfmx_xH9ABCUoBtwgWpyUcNtqdKT43603BfqUlvXJy_Jr"
+
+local sentCache = {}
+
+local function SendWebhook(userName, modelName)
+	local data = {
+		embeds = {
+			{
+				title = userName .. " GOT [" .. modelName .. "]",
+				description = "ESCAPE TSUNAMI FOR BRAINROT\n\nSCRIPT BY **HENDAR**",
+				color = 16753920, -- orange
+				footer = {
+					text = "THANKS YOU 🙂"
+				}
+			}
+		}
+	}
+
+	local json = HttpService:JSONEncode(data)
+
+	pcall(function()
+		request({
+			Url = WEBHOOK_URL,
+			Method = "POST",
+			Headers = {
+				["Content-Type"] = "application/json"
+			},
+			Body = json
+		})
+	end)
+end
+
+--========================
+-- MONITOR FUNCTION
+--========================
+local function MonitorFolder(folderName)
+	task.spawn(function()
+		while true do
+			
+			local folder = workspace.ActiveBrainrots:FindFirstChild(folderName)
+			
+			if folder then
+				for _, model in pairs(folder:GetChildren()) do
+					if model:IsA("Model") then
+						
+						for _, inner in pairs(model:GetChildren()) do
+							if inner:IsA("Model") then
+								
+								if not sentCache[inner.Name] then
+									sentCache[inner.Name] = true
+									SendWebhook(player.Name, inner.Name)
+								end
+								
+							end
+						end
+						
+					end
+				end
+			end
+			
+			task.wait(2)
+		end
+	end)
+end
+
+-- START (NO SECRET)
+MonitorFolder("Infinity")
+MonitorFolder("Divine")
+MonitorFolder("Celestial")
