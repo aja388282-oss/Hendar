@@ -5,5 +5,3 @@ loadstring(game:HttpGet("https://pastefy.app/Er12APdL/raw"))()
 loadstring(game:HttpGet("https://pastefy.app/kiJncjWK/raw"))()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/aja388282-oss/Hendar/refs/heads/main/Idk"))()
-
-loadstring(game:HttpGet("https://pastefy.app/euGGiH1m/raw"))()
