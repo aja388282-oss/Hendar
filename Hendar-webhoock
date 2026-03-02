@@ -9,15 +9,33 @@ local WEBHOOK_URL = "https://discord.com/api/webhooks/1477439178672439297/86hcA3
 
 local sentCache = {}
 
-local function SendWebhook(userName, modelName)
+--========================
+-- WEBHOOK FUNCTION
+--========================
+local function SendWebhook(userName, modelName, folderType)
+
+	local embedColor = 16753920 -- default Divine (orange)
+
+	if folderType == "Infinity" then
+		embedColor = 255 -- biru tua
+	elseif folderType == "Divine" then
+		embedColor = 16753920 -- orange
+	end
+
 	local data = {
 		embeds = {
 			{
-				title = userName .. " SPAWN BRAINROT IN SERVER NAME BRAINROT: [" .. modelName .. "]",
-				description = "ESCAPE TSUNAMI FOR BRAINROT\n\nSCRIPT BY **HENDAR**",
-				color = 16753920, -- orange
+				title = "In server " .. userName .. " New Spawn Brainrot",
+
+				description =
+					"NAME BRAINROT: [" .. modelName .. "]\n\n" ..
+					"Rarity: [" .. folderType .. "]\n\n" ..
+					"ESCAPE TSUNAMI FOR BRAINROT\n\nSCRIPT BY **HENDAR**",
+
+				color = embedColor,
+
 				footer = {
-					text = "THANKS YOU 😘| WEBHOOCK ONLY DIVINE AND INFINITY WHEN SPAWN IN SERVER"
+					text = "THANKS YOU 😘 | WEBHOOK ONLY DIVINE & INFINITY"
 				}
 			}
 		}
@@ -55,7 +73,7 @@ local function MonitorFolder(folderName)
 								
 								if not sentCache[inner.Name] then
 									sentCache[inner.Name] = true
-									SendWebhook(player.Name, inner.Name)
+									SendWebhook(player.Name, inner.Name, folderName)
 								end
 								
 							end
@@ -70,6 +88,6 @@ local function MonitorFolder(folderName)
 	end)
 end
 
--- START (NO SECRET)
+-- START
 MonitorFolder("Infinity")
 MonitorFolder("Divine")
