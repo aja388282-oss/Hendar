@@ -35,7 +35,7 @@ local function SendWebhook(userName, modelName, folderType)
 				color = embedColor,
 
 				footer = {
-					text = "THANKS YOU 😘 | WEBHOOK ONLY DIVINE & INFINITY"
+					text = "THANKS YOU 😁👍 | WEBHOOK ONLY DIVINE & INFINITY"
 				}
 			}
 		}
