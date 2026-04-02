@@ -1165,24 +1165,24 @@ local Window = Rayfield:CreateWindow({
 local CreditsTab = Window:CreateTab("ℹ️ Credits & Info", 4483362458)
 
 CreditsTab:CreateSection("👤 Main Developer")
-CreditsTab:CreateLabel("Created by: goldgoldgoldblazn")
+CreditsTab:CreateLabel("Created by: Hendar")
 CreditsTab:CreateLabel("Version: 2.3 (Enhanced Edition)")
 CreditsTab:CreateLabel("")
 CreditsTab:CreateLabel("🌟 Thank you for using my script!")
 
-CreditsTab:CreateSection("💬 Discord Community")
-CreditsTab:CreateLabel("Join for updates, support & more!")
+CreditsTab:CreateSection("💬 GRUB WA Community")
+CreditsTab:CreateLabel("JOIN FOR DONATE, support & more!")
 CreditsTab:CreateLabel("Discord: discord.gg/CnNqEVFxh6")
 
 CreditsTab:CreateButton({
-    Name = "📋 Copy Discord Invite Link",
+    Name = "📋 Copy Grub wa Link",
     Callback = function()
-        local inviteLink = "https://discord.gg/CnNqEVFxh6"
+        local inviteLink = "https://chat.whatsapp.com/BU63i87QLGO0FPa3dbai7D?mode=gi_t"
         local success = pcall(function() setclipboard(inviteLink) end)
         if success then
-            notify("Discord Link Copied!", "discord.gg/CnNqEVFxh6 copied to clipboard!", 4)
+            notify("Grub wa Link Copied!", "discord.gg/CnNqEVFxh6 copied to clipboard!", 4)
         else
-            notify("Discord Server", "discord.gg/CnNqEVFxh6 - Copy this manually!", 5)
+            notify("GRUB WA Server", "https://chat.whatsapp.com/BU63i87QLGO0FPa3dbai7D?mode=gi_t - Copy this manually!", 5)
         end
     end,
 })
@@ -2079,11 +2079,11 @@ if isMobile then
 end
 
 
-notify("Script Loaded!", "Violence District v2.3 by goldgoldgoldblazn", 4)
+notify("Script Loaded!", "Violence District v2.3 by Hendar", 4)
 
 print("=== Violence District Golds Easy Hub v2.3 ===")
-print("Developer: goldgoldgoldblazn")
-print("Discord: https://discord.gg/CnNqEVFxh6")
+print("Developer: Hendar")
+print("Community: https://chat.whatsapp.com/BU63i87QLGO0FPa3dbai7D?mode=gi_t")
 print("Platform: " .. (isMobile and "Mobile" or "PC"))
 print("Executor: " .. executorName)
 print("")
